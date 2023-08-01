@@ -61,7 +61,7 @@ def selecting():
     conn = psycopg2.connect("postgres://csdse100_render_db_user:bL3ajxMLfeF7OWTwcMgL4Hdf56oa0XXr@dpg-cj461sqip7vuasjc1jig-a/csdse100_render_db")
     cur = conn.cursor()
     cur.execute('''
-    SELECT * FROM BASKETBALL;
+    SELECT * FROM Basketball;
     ''')
     records = cur.fetchall()
     conn.close()
@@ -70,7 +70,7 @@ def selecting():
     for player in records:
         response_string += "<tr>"
         for info in player:
-            response_string += "<tr>{}</tr>".format(info)
+            response_string += "<td>{}</td>".format(info)
         response_string += "</tr>"
     response_string += "</table>"
     return response_string
